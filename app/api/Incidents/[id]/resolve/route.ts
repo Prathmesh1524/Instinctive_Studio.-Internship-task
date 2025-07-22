@@ -5,7 +5,7 @@ const prisma = new PrismaClient();
 
 export async function PATCH(
   req: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: { id: number } }
 ) {
   const id = parseInt(params.id, 10); // ⬅️ Correct usage here
 
