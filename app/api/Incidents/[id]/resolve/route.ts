@@ -1,11 +1,12 @@
 import { PrismaClient } from '@prisma/client';
 import { NextResponse } from 'next/server';
+import type { NextRequest } from 'next/server';
 
 const prisma = new PrismaClient();
 
 export async function PATCH(
-  req: Request,
-  context: { params: Record<string, string> }
+  req: NextRequest,
+  context: { params: { id: string } }
 ) {
   const id = parseInt(context.params.id, 10);
 
