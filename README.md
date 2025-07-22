@@ -1,40 +1,70 @@
-<<<<<<< HEAD
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚨 Incident Monitoring Dashboard
 
-## Getting Started
+A real-time dashboard to monitor camera-triggered incidents, designed for security and surveillance use cases. It fetches incidents from different camera sources and categorizes them based on threat types.
 
-First, run the development server:
+---
+
+## 🔗 Live Demo
+
+> Note: This project uses environment variables. Make sure to configure them locally or in your Vercel/Netlify deployment settings.
+
+---
+
+## 🧠 Tech Stack & Decisions
+
+| Layer         | Tech Stack             | Reasoning                                                      |
+|--------------|------------------------|----------------------------------------------------------------|
+| Frontend     | **Next.js**, TailwindCSS | React-based framework with file-based routing and SSR support |
+| Styling      | Tailwind CSS           | Utility-first CSS for rapid UI development                    |
+| Backend/API  | Next.js API Routes     | Simple serverless deployment with built-in API support         |
+| ORM          | Prisma + PostgreSQL    | Modern and type-safe ORM with good DX                         |
+| Deployment   | Vercel                 | Fast, seamless deployment with Next.js support                |
+| Icons        | React Icons            | Lightweight icon usage                                         |
+
+---
+
+
+ If I Had More Time...
+✅ Add filtering by time range, location, and threat type
+
+✅ Implement login system (Auth.js or NextAuth)
+
+✅ Add unit & integration testing with Vitest or Jest
+
+✅ Improve mobile responsiveness and performance
+
+✅ Add real-time updates using WebSockets or Pusher
+
+✅ Create Admin Panel for adding/removing cameras
+
+✅ Add status analytics/charts using Chart.js or Recharts
+
+
+ Author
+Prathmesh Deshpande
+
+GitHub
+
+Portfolio
+
+### SETUP
+### 1. Clone the Repo
 
 ```bash
-npm run dev
+1- git clone https://github.com/yourusername/incident-dashboard.git
+2- cd incident-dashboard
+
+3- npm install
+
+4- cp .env.example .env
+5- DATABASE_URL=postgresql://user:password@localhost:5432/incidentdb
+
+6- npx prisma db push
 # or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+npx prisma migrate dev --name init
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+7- npm run dev
+8- npx prisma db seed
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-=======
-# SecureSight-Internship-task
->>>>>>> ec197dd39b6570b5cb1b422d108bf8ee84c9b0e1
