@@ -5,9 +5,13 @@ const prisma = new PrismaClient();
 
 export async function PATCH(
   req: Request,
-  { params }: { params: { id: number } }
+  { params }: { params: { id: string } } // Changed from number to string (Next.js dynamic route params are strings)
 ) {
-  const { id } = params;
+  const id = parseInt(params.id, 10);
+
+  if (isNaN(id)) {
+    return NextResponse.json({ error: 'Invalid incident ID' }, { status: 400 });
+  }
 
   try {
     const incident = await prisma.incident.findUnique({
@@ -19,13 +23,18 @@ export async function PATCH(
     }
 
     const updated = await prisma.incident.update({
-      where: { id},
+      where: { id },
       data: { resolved: !incident.resolved },
     });
 
     return NextResponse.json(updated);
   } catch (error) {
-    console.error('Error updating incident:', error);
-    return NextResponse.json({ error: 'Failed to update incident' }, { status: 500 });
+    const message = error instanceof Error ? error.message : 'Unknown error';
+    console.error('❌ Error updating incident:', message);
+
+    return NextResponse.json(
+      { error: 'Failed to update incident', details: message },
+      { status: 500 }
+    );
   }
 }
