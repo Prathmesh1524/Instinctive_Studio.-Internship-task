@@ -51,7 +51,7 @@ Portfolio
 ### 1. Clone the Repo
 
 ```bash
-1 - git clone https://github.com/Prathmesh1524/SecureSight-Internship-task.git
+1 - git clone https://github.com/Prathmesh1524/Instinctive_Studio.-Internship-task.git
 2 - cd Instinctive_Studio.-Internship-task
 
 3 - npm install
