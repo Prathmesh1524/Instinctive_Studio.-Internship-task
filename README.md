@@ -40,13 +40,6 @@ A real-time dashboard to monitor camera-triggered incidents, designed for securi
 ✅ Add status analytics/charts using Chart.js or Recharts
 
 
- Author
-Prathmesh Deshpande
-
-GitHub
-
-Portfolio
-
 ### SETUP
 ### 1. Clone the Repo
 
