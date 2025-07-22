@@ -5,9 +5,9 @@ const prisma = new PrismaClient();
 
 export async function PATCH(
   req: Request,
-  { params }: { params: { id: string } } // Changed from number to string (Next.js dynamic route params are strings)
+  context: { params: Record<string, string> }
 ) {
-  const id = parseInt(params.id, 10);
+  const id = parseInt(context.params.id, 10);
 
   if (isNaN(id)) {
     return NextResponse.json({ error: 'Invalid incident ID' }, { status: 400 });
