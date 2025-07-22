@@ -1,14 +1,13 @@
 import { PrismaClient } from '@prisma/client';
-import { NextResponse } from 'next/server';
-import type { NextRequest } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 
 const prisma = new PrismaClient();
 
 export async function PATCH(
   req: NextRequest,
-  context: { params: { id: string } }
+  { params }: { params: { id: string } }
 ) {
-  const id = parseInt(context.params.id, 10);
+  const id = parseInt(params.id, 10); // ⬅️ Correct usage here
 
   if (isNaN(id)) {
     return NextResponse.json({ error: 'Invalid incident ID' }, { status: 400 });
