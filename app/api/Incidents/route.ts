@@ -20,10 +20,18 @@ export async function GET(req: NextRequest) {
 
     console.log('✅ Fetched incidents:', incidents.length);
     return NextResponse.json(incidents);
-  } catch (error: any) {
-    console.error('❌ Prisma fetch error:', error.message);
+  } catch (error) {
+    // ✅ FIXED: Removed `any`, used proper type guard
+    if (error instanceof Error) {
+      console.error('❌ Prisma fetch error:', error.message);
+      return NextResponse.json(
+        { error: 'Failed to fetch incidents', details: error.message },
+        { status: 500 }
+      );
+    }
+
     return NextResponse.json(
-      { error: 'Failed to fetch incidents', details: error.message },
+      { error: 'Failed to fetch incidents', details: 'Unknown error' },
       { status: 500 }
     );
   }
