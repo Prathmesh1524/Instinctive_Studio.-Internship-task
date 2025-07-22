@@ -51,20 +51,20 @@ Portfolio
 ### 1. Clone the Repo
 
 ```bash
-1- git clone https://github.com/yourusername/incident-dashboard.git
-2- cd incident-dashboard
+1 - git clone https://github.com/Prathmesh1524/SecureSight-Internship-task.git
+2 - cd Instinctive_Studio.-Internship-task
 
-3- npm install
+3 - npm install
 
-4- cp .env.example .env
-5- DATABASE_URL=postgresql://user:password@localhost:5432/incidentdb
+4 - cp .env.example .env
+5 - DATABASE_URL=postgresql://user:password@localhost:5432/incidentdb
 
-6- npx prisma db push
+6 - npx prisma db push
 # or
 npx prisma migrate dev --name init
 
-7- npm run dev
-8- npx prisma db seed
+7 - npm run dev
+8 - npx prisma db seed
 
 
 
